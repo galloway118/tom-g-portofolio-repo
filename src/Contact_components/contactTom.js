@@ -1,7 +1,6 @@
 import React from 'react';
 import '../components/Tom G profile/Tom.css';
 import './contactTom.css';
-import './send_mail.php';
 
 class Enquiry extends React.Component {
   state = {
@@ -18,16 +17,18 @@ class Enquiry extends React.Component {
           below
         </p>
         <form
-          method="post"
-          action="send_mail.php"
+          action="mailto:tomgalloway@hotmail.co.uk"
+          method="POST"
+          encType="multipart/form-data"
+          name="EmailTestForm"
           className="inputForm"
-          onSubmit={this.handleSubmit}
+          // onSubmit={this.handleSubmit}
         >
           <label>
             Name<br></br>
             <input
               type="text"
-              name="first_name"
+              name="name"
               value={this.state.nameInput}
               onChange={this.onNameChange}
               placeholder="Name"
@@ -39,7 +40,7 @@ class Enquiry extends React.Component {
             <br></br>
             <input
               type="email"
-              name="email_address"
+              name="email"
               onChange={this.onEmailChange}
               value={this.state.emailInput}
               placeholder="Email address"
@@ -50,7 +51,7 @@ class Enquiry extends React.Component {
             <br></br>
             <textarea
               className="messageBox"
-              name="comments"
+              name="message"
               maxLength="500"
               onChange={this.onMessageChange}
               placeholder="message"
