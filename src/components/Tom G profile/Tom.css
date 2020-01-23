@@ -1,0 +1,30 @@
+.tominfo,
+.enquiry {
+  margin-top: 5%;
+  padding: 20px;
+  grid-area: 1 / 1 / span 6 / span 3;
+  /* border: 5px rgb(240, 244, 247) double; */
+  text-align: center;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 600;
+  background-color: rgba(34, 34, 34, 0.2);
+  color: rgb(240, 244, 247);
+  display: inline-block;
+  position: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(2px + 2vmin);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.tominfo h2 {
+  text-align: center;
+}
+
+.tomg {
+  height: 40%;
+  width: 50%;
+  padding-left: 25%;
+}

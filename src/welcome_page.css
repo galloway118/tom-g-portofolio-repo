@@ -1,0 +1,11 @@
+
+.welcome_page, .project_page, .About_page, .Contact_page, .Error_page {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat( 5, 1fr);
+  grid-gap: 10px 10px;
+}
+
+
