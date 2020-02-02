@@ -19,8 +19,9 @@
 }
 
 .tomglogo {
-  max-width: 5%;
-  max-height: 5%;
+  padding-top: 0.5%;
+  max-width: 1%;
+  max-height: 1%;
   color: rgb(240, 244, 247);
   align-items: center;
   justify-content: center;

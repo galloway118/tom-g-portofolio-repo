@@ -10,11 +10,16 @@ const Navbar = props => {
         <div className="navbar_toggle">
           <Sidebutton click={props.navBarClickHandler} />
         </div>
-        <img
-          className="tomglogo"
-          src="https://media.licdn.com/dms/image/C5603AQHz6b92YS5oiQ/profile-displayphoto-shrink_200_200/0?e=1583366400&v=beta&t=XXmAMwLi8vDmprq4JrHC9QDVZc99ImxJjCqcQH2BCJM"
-          alt="tom g at northcoders"
-        ></img>
+        <div className="tomglogo">
+          <a href="https://www.linkedin.com/in/tom-galloway-76463975/">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReaCf7FhigbSmOx_ogUQ3Qk43rwiDyYirR7wWhnf6N3-h_ZB5h&s"
+              width="500%"
+              height="500%"
+              alt="tom g at northcoders"
+            ></img>
+          </a>
+        </div>
         <div className="spacer"></div>
         <div className="navbar_items">
           <ul>
