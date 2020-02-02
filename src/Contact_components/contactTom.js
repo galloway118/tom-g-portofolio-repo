@@ -1,16 +1,12 @@
 import React from 'react';
 import '../components/Tom G profile/Tom.css';
 import './contactTom.css';
-import axios from 'axios';
-const API_PATH = 'http://localhost:1992/my-portfolio/api/contact/index.php';
 
 class Enquiry extends React.Component {
   state = {
-    nameInput: '',
-    emailInput: '',
-    messageInput: '',
-    mailsent: false,
-    error: null
+    name: '',
+    email: '',
+    message: ''
   };
   render() {
     return (
@@ -21,99 +17,90 @@ class Enquiry extends React.Component {
           below
         </p>
         <form
-          action="#"
-          // method="POST"
-          // encType="multipart/form-data"
-          name="EmailTestForm"
+          onSubmit={this.handleSubmit.bind(this)}
+          method="POST"
           className="inputForm"
-          onSubmit={this.handleSubmit}
         >
-          <label>
-            Name<br></br>
+          <label htmlFor="Name">
+            Name
+            <br></br>
             <input
               type="text"
-              name="name"
               id="name"
-              value={this.state.nameInput}
+              value={this.state.name}
               onChange={this.onNameChange}
               placeholder="Name"
             />
           </label>
 
-          <label>
+          <label htmlFor="exampleInputEmail1">
             Email
             <br></br>
             <input
               type="email"
-              name="email"
+              aria-describedby="emailHelp"
               id="email"
               onChange={this.onEmailChange}
-              value={this.state.emailInput}
+              value={this.state.email}
               placeholder="Email address"
             />
           </label>
-          <label>
+          <label htmlFor="message">
             Message
             <br></br>
             <textarea
               className="messageBox"
               name="message"
               id="message"
+              value={this.state.message}
               maxLength="500"
               onChange={this.onMessageChange}
               placeholder="message"
             ></textarea>
-            <input
-              type="submit"
-              value="Submit"
-              onClick={this.handleFormSubmit}
-            />
           </label>
-          {/* <button className="contactButton">Submit</button> */}
-          <div>
-            {this.state.mailSent && <div>Thank you for contcting us.</div>}
-          </div>
+          <button className="contactButton">Submit</button>
         </form>
       </div>
     );
   }
 
   onNameChange = event => {
-    this.setState({ nameInput: event.target.value });
+    this.setState({ name: event.target.value });
   };
 
   onEmailChange = event => {
-    this.setState({ emailInput: event.target.value });
+    this.setState({ email: event.target.value });
   };
 
   onMessageChange = event => {
-    this.setState({ messageInput: event.target.value });
+    this.setState({ message: event.target.value });
   };
 
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  //   this.setState({
-  //     nameInput: '',
-  //     messageInput: '',
-  //     emailInput: ''
-  //   });
-  // };
-
-  handleFormSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault();
-    axios({
-      method: 'post',
-      url: `${API_PATH}`,
-      headers: { 'content-type': 'application/json' },
-      data: this.state
+
+    fetch('http://localhost:3002/send', {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
     })
-      .then(result => {
-        this.setState({
-          mailSent: result.data.sent
-        });
-      })
-      .catch(error => this.setState({ error: error.message }));
-  };
+      .then(response => response.json())
+      .then(response => {
+        if (response.status === 'success') {
+          alert('Message Sent.');
+          this.resetForm();
+        } else if (response.status === 'fail') {
+          alert('Message failed to send.');
+        }
+      });
+  }
+
+  resetForm() {
+    this.setState({ name: '', email: '', message: '' });
+  }
 }
 
 export default Enquiry;
