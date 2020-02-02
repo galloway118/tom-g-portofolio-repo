@@ -1,11 +1,23 @@
-
-.welcome_page, .project_page, .About_page, .Contact_page, .Error_page {
+.welcome_page,
+.project_page,
+.About_page,
+.Contact_page,
+.Error_page {
   display: grid;
   height: 100%;
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat( 5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-gap: 10px 10px;
 }
 
-
+.cards li {
+  width: 90%;
+  padding: 5% 5%;
+  align-content: center;
+  box-shadow: bisque;
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1% 1%;
+  margin: 1% 1%;
+}
