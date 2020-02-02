@@ -7,7 +7,7 @@ import Sidebar from '../components/navbar/sidebar';
 import App from '../App';
 import Projects from '../components/pages/projects';
 import Contact from '../components/pages/contact';
-import About from '../components/pages/about_me';
+// import About from '../components/pages/about_me';
 import Error from '../components/pages/Error';
 
 class Main extends React.Component {
@@ -27,7 +27,7 @@ class Main extends React.Component {
           <App path="/" />
           <Projects path="/projects" />
           <Contact path="/contact" />
-          <About path="/about_me" />
+          {/* <About path="/about_me" /> */}
           <Error default />
         </Router>
       </div>

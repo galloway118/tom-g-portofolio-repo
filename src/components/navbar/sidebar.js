@@ -9,9 +9,9 @@ const SideBar = ({ navBarClickHandler }) => {
         <li onClick={navBarClickHandler}>
           <Link to="/">Home</Link>
         </li>
-        <li onClick={navBarClickHandler}>
+        {/* <li onClick={navBarClickHandler}>
           <Link to="/about_me">About</Link>
-        </li>
+        </li> */}
         <li onClick={navBarClickHandler}>
           <Link to="/projects">Projects</Link>
         </li>
