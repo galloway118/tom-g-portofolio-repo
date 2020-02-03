@@ -6,6 +6,7 @@
   text-align: center;
   font-family: 'Trebuchet MS', Arial, sans-serif;
   font-weight: 600;
+
   background-color: rgba(34, 34, 34, 0.2);
   color: rgb(240, 244, 247);
   display: inline-block;
@@ -18,12 +19,28 @@
   text-align: justify;
 }
 
+.tominfo ul {
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+}
+
+.tominfo li {
+  background-color: rgba(34, 34, 34, 0.8);
+}
+
+.tominfo li a {
+  text-decoration: none;
+  color: rgb(240, 244, 247);
+  text-align: center;
+}
+
 .tominfo h2 {
   text-align: center;
 }
 
 .tomg {
   height: 40%;
-  width: 35%;
-  padding-left: 33%;
+  width: 30%;
+  padding-left: 35%;
 }

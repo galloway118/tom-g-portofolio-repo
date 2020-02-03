@@ -9,9 +9,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(5, 1fr);
   grid-gap: 10px 10px;
+  text-decoration: none;
 }
 
-.cards li {
+.welcome_page li {
   width: 90%;
   padding: 5% 5%;
   align-content: center;
